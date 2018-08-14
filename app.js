@@ -7,6 +7,8 @@ const session = require('express-session');
 
 // 引入自己的路由
 const managerRoute = require('./router/managerRoute');
+const studentRoute = require('./router/studentRoute');
+
 // 实例化app
 let app = express();
 
@@ -28,6 +30,8 @@ app.use(express.static('static'));
 
 // 调用自己写的路由模块
 app.use('/manager', managerRoute);
+
+app.use('/student', studentRoute);
 
 // 开启监听
 app.listen(8080, (err) => {
